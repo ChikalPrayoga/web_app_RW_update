@@ -26,8 +26,8 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 Ikuti langkah-langkah berikut jika ingin menjalankan proyek ini di laptop/perangkat lain:
 
-### 1. Clone Repository
-```bash
+## 1. Clone Repository
+###bash
 git clone https://github.com/ChikalPrayoga/web_app_RW_update.git
 cd web_app_RW_update
 
