@@ -22,50 +22,55 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+# 🚀 Panduan Jalankan Proyek (Setup di Perangkat Baru)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Ikuti langkah-langkah berikut jika ingin menjalankan proyek ini di laptop/perangkat lain:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. Clone Repository
+```bash
+git clone https://github.com/ChikalPrayoga/web_app_RW_update.git
+cd web_app_RW_update
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 2. Install Dependensi (PHP & Node.js)
+###bash
+composer install
+npm install
 
-## Laravel Sponsors
+## 3. Konfigurasi Database
+Buat file .env dari .env.example:
+###bash
+cp .env.example .env
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Edit .env sesuai kredensial database Anda (MySQL/MariaDB):
+DB_CONNECTION=mysql
+DB_HOST=[IP_ADDRESS]
+DB_PORT=3306
+DB_DATABASE=nama_database_anda
+DB_USERNAME=root
+DB_PASSWORD=[PASSWORD]
 
-### Premium Partners
+Atau
+Salin file .env.example menjadi .env:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Di Windows (PowerShell): copy .env.example .env
+Di Bash/Linux/Mac: cp .env.example .env
+Lalu buat kunci aplikasi (App Key):
 
-## Contributing
+###bash
+php artisan key:generate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 4. Migrasi Database
+Buka file .env yang baru dibuat, lalu sesuaikan nama database, username, dan password MySQL/SQLite Anda. Setelah itu jalankan migrasi:
 
-## Code of Conduct
+###bash
+php artisan migrate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 5. Jalankan Aplikasi
+Jalankan server Laravel dan kompiler asset frontend di dua terminal terpisah:
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# Webapp-SIM-RW-047-28juni
-versi terbaru 28 juni
->>>>>>> e57825a7afb3e61ce8fec894634b398807774ea6
+Terminal 1 (Laravel Server):
+###bash
+php artisan serve
+Terminal 2 (Frontend Vite/Mix):
+###bash
+npm run dev
