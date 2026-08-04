@@ -27,19 +27,22 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 Ikuti langkah-langkah berikut jika ingin menjalankan proyek ini di laptop/perangkat lain:
 
 ## 1. Clone Repository
-###bash
+```bash
 git clone https://github.com/ChikalPrayoga/web_app_RW_update.git
 cd web_app_RW_update
+```
 
 ## 2. Install Dependensi (PHP & Node.js)
-###bash
+```bash
 composer install
 npm install
+```
 
 ## 3. Konfigurasi Database
 Buat file .env dari .env.example:
-###bash
+```bash
 cp .env.example .env
+```
 
 Edit .env sesuai kredensial database Anda (MySQL/MariaDB):
 DB_CONNECTION=mysql
@@ -56,21 +59,25 @@ Di Windows (PowerShell): copy .env.example .env
 Di Bash/Linux/Mac: cp .env.example .env
 Lalu buat kunci aplikasi (App Key):
 
-###bash
+```bash
 php artisan key:generate
+```
 
 ## 4. Migrasi Database
 Buka file .env yang baru dibuat, lalu sesuaikan nama database, username, dan password MySQL/SQLite Anda. Setelah itu jalankan migrasi:
 
-###bash
+```bash
 php artisan migrate
+```
 
 ## 5. Jalankan Aplikasi
 Jalankan server Laravel dan kompiler asset frontend di dua terminal terpisah:
 
 Terminal 1 (Laravel Server):
-###bash
+```bash
 php artisan serve
+```
 Terminal 2 (Frontend Vite/Mix):
-###bash
+```bash
 npm run dev
+```
